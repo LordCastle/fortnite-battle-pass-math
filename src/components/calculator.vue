@@ -1,10 +1,18 @@
 <template>
     <div class="calculator">
         <h1>Fortnite Season Pass Math</h1>
+
         <p>
             Update the fields below to calculate how many levels per day you
             need to max out your Fortnite season pass before it ends!
         </p>
+
+        <p>
+            Simply plug in your current level, and adjust the max level and
+            season end date as you see fit. Fields automatically update when you
+            change them.
+        </p>
+
         <form class="form-container">
             <fieldset>
                 <label for="">Your current level:</label>
@@ -15,7 +23,7 @@
                     min="0"
                     max="100"
                     v-model="userLevel"
-                    v-on:change="calcLevelsNeeded"
+                    v-on:input="calcLevelsNeeded"
                     title="min: 0, max: 100"
                 />
             </fieldset>
@@ -29,7 +37,7 @@
                     min="0"
                     max="100"
                     v-model="maxLevel"
-                    v-on:change="calcLevelsNeeded"
+                    v-on:input="calcLevelsNeeded"
                     title="min: 0, max: 100"
                 />
             </fieldset>
@@ -39,7 +47,7 @@
                 <date-picker
                     v-model="endDate"
                     format="MM-DD-YYYY"
-                    v-on:change="calcLevelsNeeded"
+                    v-on:input="calcLevelsNeeded"
                 >
                 </date-picker>
             </fieldset>
@@ -94,15 +102,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
 .calculator {
     max-width: 400px;
     margin: 2rem auto;
@@ -117,7 +116,7 @@ body {
             padding: 1rem;
 
             @media screen and (min-width: 768px) {
-                margin: 0 .5rem 1rem;
+                margin: 0 0.5rem 1rem;
             }
         } // fieldset
 
