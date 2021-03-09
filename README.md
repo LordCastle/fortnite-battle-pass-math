@@ -1,4 +1,9 @@
-# fork-knife
+# Fortnite Season Pass Math
+
+This project is to create a calculator that will tell you how many battle pass levels per day you need to max out the Fortnite battle pass.
+
+This is a work in progress.
+
 
 ## Project setup
 ```
